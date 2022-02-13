@@ -4,6 +4,13 @@ import { listQuestions, getInterviewList } from '../actions/questionActions'
 import Question from '../components/Question'
 import PopupScreen from './PopupScreen';
 
+import Button from '@material-ui/core/Button';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 
 const HomeScreen = () => {
 
@@ -18,6 +25,8 @@ const HomeScreen = () => {
         console.log("interviewList: ",interviewList)
         
     }
+
+    const [ questionType, setQuestionType ] = useState('all')
 
     const dispatch = useDispatch()
     const questionsList = useSelector((state) => state.questionsList)
@@ -42,6 +51,28 @@ const HomeScreen = () => {
                         {/* <button className="focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:bg-indigo-50 flex cursor-pointer items-center justify-center px-3 py-2.5 border rounded border-gray-100">
                             <p  className="focus:outline-none text-xs md:text-sm leading-none text-gray-600">Filter by: Latest</p>
                         </button> */}
+                                  <Box className="pl-4 h-8">
+                                    <FormControl className="w-40">
+                                    <InputLabel>类型</InputLabel>
+                                    <Select
+                                        value={questionType}
+                                        label="类型"
+                                        // onChange={handleChange}
+                                        className="h-10 text-sm"
+                                    >
+                                        <MenuItem value={"all"}>all</MenuItem>
+                                        <br></br>
+                                        <MenuItem value={"golang"}>golang</MenuItem>
+                                        <br></br>
+                                        <MenuItem value={"op"}>操作系统</MenuItem>
+                                        <br></br>
+                                        <MenuItem value={"database"}>数据库</MenuItem>
+                                        <br></br>
+                                        <MenuItem value={"blockchain"}>区块链</MenuItem>
+                                    </Select>
+                                    </FormControl>
+                                </Box>
+
                     </div>
                     <button 
                     className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
