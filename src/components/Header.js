@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // import Navbar from './layout/Navbar'
 const Header = () => {
     
@@ -9,14 +10,17 @@ const Header = () => {
             <nav className="container mx-auto sm:py-6 sm:px-7 py-2 px-4">
                 <div className="flex justify-between "> 
                     <div className="hidden sm:flex flex-row items-center space-x-6">
-                        <img className=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg1.svg" alt="twitter" />                       
+                        {/* <img className=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg1.svg" alt="twitter" />                       
                        <img className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg2.svg" alt="facebook" />
                         <img className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg3.svg" alt="linkdin" />
-                        <img className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg4.svg" alt="instagram" />                                                             
+                        <img className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg4.svg" alt="instagram" />                                                              */}
+                        <p className="text-gray-600">你已经失业225天了，赶紧找工作！</p>
                     </div>
-                    <div className=" flex space-x-3 items-center">
-                        <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg5.svg" alt="circle" />                 
-                        <h1 className=" font-normal text-2xl leading-6 text-gray-800" >面试题广场</h1>
+                    <div className="">
+                        <Link to="/" className='flex items-center'>
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg5.svg" alt="circle" />                 
+                            <h1 className=" font-normal text-2xl leading-6 text-gray-800 pl-4" >面试题广场</h1>
+                        </Link>
                     </div>
                     <div className="hidden sm:flex flex-row space-x-4">
                         <button className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-indigo-700 bg-white border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center" >注册</button>

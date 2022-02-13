@@ -15,6 +15,7 @@ const HomeScreen = () => {
         e.preventDefault()
         setIsOpen(!isOpen)
         dispatch(getInterviewList())
+        console.log("interviewList: ",interviewList)
         
     }
 
@@ -22,10 +23,10 @@ const HomeScreen = () => {
     const questionsList = useSelector((state) => state.questionsList)
     const interviewList = useSelector((state) => state.getInterviewList)
     const { loading, error, questions } = questionsList
-    
+    const { interview_questions } = interviewList
     useEffect(() => {
         console.log(isOpen)
-        // console.log(interviewList)
+        console.log("homescreen interviewList!!!!!!!!!!!!: ", interview_questions)
         dispatch(listQuestions())
     }, [dispatch, isOpen])
 
@@ -38,9 +39,9 @@ const HomeScreen = () => {
                 <div className="flex items-center border-b border-gray-200 justify-between px-6 py-3">
                     <div className="flex">
                         <p tabIndex="0" className="focus:outline-none mt-4 text-sm lg:text-xl font-semibold leading-tight text-gray-800">所有面试题</p>
-                        <button className="focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:bg-indigo-50 flex cursor-pointer items-center justify-center px-3 py-2.5 border rounded border-gray-100">
-                        <p  className="focus:outline-none text-xs md:text-sm leading-none text-gray-600">Filter by: Latest</p>
-                    </button>
+                        {/* <button className="focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:bg-indigo-50 flex cursor-pointer items-center justify-center px-3 py-2.5 border rounded border-gray-100">
+                            <p  className="focus:outline-none text-xs md:text-sm leading-none text-gray-600">Filter by: Latest</p>
+                        </button> */}
                     </div>
                     <button 
                     className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -63,7 +64,7 @@ const HomeScreen = () => {
             </div>
         </div>
 
-        {isOpen && <PopupScreen></PopupScreen>}
+        {isOpen && interview_questions.length > 0 && <PopupScreen questions={interview_questions}></PopupScreen>}
 
     
   </section>

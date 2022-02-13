@@ -13,15 +13,15 @@ const Question = ( { question } ) => {
                                 <p className="font-semibold text-gray-800">{question.quest}</p>
                                 {/* <p className="text-indigo-700 ml-3">(ID 879-10-940)</p> */}
                             </div>
-                            <p className="text-xs md:text-sm leading-none text-gray-600 mt-2">15’5. Core i5. FHD. Integrated graphics</p>
+                            {/* <p className="text-xs md:text-sm leading-none text-gray-600 mt-2">15’5. Core i5. FHD. Integrated graphics</p> */}
                         </div>
                     </div>
                 </td>
                 <td className="pl-16">
                     <div>
-                        <p className="text-sm font-semibold leading-none text-right text-gray-800">$2200</p>
+                        {/* <p className="text-sm font-semibold leading-none text-right text-gray-800">$2200</p> */}
                         <div className="flex items-center justify-center px-2 py-1 mt-2 bg-green-100 rounded-full">
-                            <p className="text-xs leading-3 text-green-700">Shipped</p>
+                            <p className="text-xs leading-3 text-green-700">难度</p>
                         </div>
                     </div>
                 </td>

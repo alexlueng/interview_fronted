@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-const PopupScreen = () => {
+const PopupScreen = ({ questions }) => {
 
-    const questions = ["11", "22", "33"]
+    console.log("POPUP questions: ", questions)
+    // const questions = ["11", "22", "33"]
     const [selected, setSelected] = useState(0)
     const handleNextQuestionClick = () => {
       setSelected(prev => {
@@ -29,8 +30,8 @@ const PopupScreen = () => {
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                  <h3 className="text-3xl font-semibold">
-                    第一题
+                  <h3 className="text-xl">
+                    第{questions[selected].id}题
                   </h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -44,7 +45,8 @@ const PopupScreen = () => {
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
-                    {questions[selected]}
+                    {questions[selected].quest}
+                    
                   </p>
                 </div>
                 {/*footer*/}

@@ -2,13 +2,15 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { questionListReducer, 
-    addQuestionReducer,
-    getInterviewListReducer } from './reducers/QuestionsReducer'
+        addQuestionReducer,
+        getInterviewListReducer,
+        tagListReducer } from './reducers/QuestionsReducer'
 
 const reducer = combineReducers({
     questionsList: questionListReducer,
     addQuestion: addQuestionReducer,
-    getInterviewList: getInterviewListReducer
+    getInterviewList: getInterviewListReducer,
+    tagList: tagListReducer,
 })
 
 // const cartItemsFromStorage = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItem')) : []
