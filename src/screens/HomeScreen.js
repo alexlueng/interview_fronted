@@ -31,14 +31,16 @@ const HomeScreen = () => {
     const dispatch = useDispatch()
     const questionsList = useSelector((state) => state.questionsList)
     const interviewList = useSelector((state) => state.getInterviewList)
+    // const tagListGroup = useSelector(state => state.tagList)
+
     const { loading, error, questions } = questionsList
     const { interview_questions } = interviewList
-
-    // const userInfo  = localStorage.getItem('userInfo')
-
+    // const { tag_list } = tagListGroup
 
     useEffect(() => {
         dispatch(listQuestions())
+        // dispatch(tagList())
+        // console.log("tag list: ", tag_list)
     }, [dispatch, isOpen])
 
 

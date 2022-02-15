@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Question = ( { question } ) => {
+
+    
   return <>
             <tr tabIndex="0" className="focus:outline-none">
                 <td>
@@ -14,10 +16,13 @@ const Question = ( { question } ) => {
                                 {/* <p className="text-indigo-700 ml-3">(ID 879-10-940)</p> */}
                             </div>
                             <div className='pl-4 flex justify'>
-                                <button type='button' name='hello' className='text-gray-800 bg-blue-400 mx-2 text-sm rounded'>#hello</button>
-                                <button type='button' name='hello' className='text-gray-800 bg-blue-400 mx-2 text-sm rounded'>#hello</button>
-                                <button type='button' name='hello' className='text-gray-800 bg-blue-400 mx-2 text-sm rounded'>#hello</button>
-                                <button type='button' name='hello' className='text-gray-800 bg-blue-400 mx-2 text-sm rounded'>#hello</button>
+                                {/* {tags.map((m => (
+                                    <button type='button' name='hello' className='text-gray-800 bg-blue-400 mx-2 text-sm rounded' id={m.id}>#hello</button>
+                                )))} */}
+                                {/* bg-gray-500 hover:bg-gray-700 text-white text-center py-2 px-4 rounded */}
+                                {question.tag_list.map((m => (
+                                    <button type='button' name='hello' className='text-white bg-gray-500 hover:bg-gray-700 mx-2 text-sm text-center py-1 px-2 rounded' key={m}>#{m}</button>
+                                )))}
                             </div>
                             {/* <p className="text-xs md:text-sm leading-none text-gray-600 mt-2">15’5. Core i5. FHD. Integrated graphics</p> */}
                         </div>
