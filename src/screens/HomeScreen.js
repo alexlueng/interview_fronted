@@ -22,7 +22,7 @@ const HomeScreen = () => {
         e.preventDefault()
         setIsOpen(!isOpen)
         dispatch(getInterviewList())
-        console.log("interviewList: ",interviewList)
+        // console.log("interviewList: ",interviewList)
         
     }
 
@@ -33,13 +33,14 @@ const HomeScreen = () => {
     const interviewList = useSelector((state) => state.getInterviewList)
     const { loading, error, questions } = questionsList
     const { interview_questions } = interviewList
+
+    // const userInfo  = localStorage.getItem('userInfo')
+
+
     useEffect(() => {
-        console.log(isOpen)
-        console.log("homescreen interviewList!!!!!!!!!!!!: ", interview_questions)
         dispatch(listQuestions())
     }, [dispatch, isOpen])
 
-    // console.log(questionsList.questions)
 
   return <section>
       

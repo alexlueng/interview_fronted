@@ -28,7 +28,7 @@ const AddQuestionScreen = ({ location, history }) => {
 
 
   const submitHandler = (e) => {
-    console.log("submit question")
+    // console.log("submit question")
     e.preventDefault()
 
     dispatch(addQuestion(question, answer, questionType, hardLevel, ''))
@@ -43,8 +43,8 @@ const AddQuestionScreen = ({ location, history }) => {
   }
 
   useEffect(() => {
-    console.log(questionType)
-    console.log("taglistGroup^^^^^^^^^^^^^^^^^^: ", tagListGroup)
+    // console.log(questionType)
+    // console.log("taglistGroup^^^^^^^^^^^^^^^^^^: ", tagListGroup)
     dispatch(tagList())
 
     // if (questionInfo) {

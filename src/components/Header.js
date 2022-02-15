@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-// import Navbar from './layout/Navbar'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../actions/userActions'
+
+
 const Header = () => {
+
+    const dispatch = useDispatch()
+
+    const userLogin = useSelector(state => state.userLogin)
+    const { userInfo } = userLogin
+    // const { userRegisterInfo } = userRegister
+    const userRegister = useSelector(state => state.userRegister)
+    const { userRegisterInfo } = userRegister
+    // console.log("user register info: ", userRegisterInfo)
+
+    
+
+    const logoutHandler = () => {
+        dispatch(logout())
+    }
+    
     
     return (
         <header>
@@ -22,10 +41,29 @@ const Header = () => {
                             <h1 className=" font-normal text-2xl leading-6 text-gray-800 pl-4" >面试题广场</h1>
                         </Link>
                     </div>
-                    <div className="hidden sm:flex flex-row space-x-4">
-                        <button className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-indigo-700 bg-white border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center" >注册</button>
-                        <button className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-white bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-600 hover:bg-indigo-600 duration-150 justify-center items-center" >登录</button>
+
+                    {userInfo || userRegisterInfo ? 
+                    <div className="hidden md:flex items-center pr-8">
+                    <div className=''>
+                        <h3 className='text-md pr-4'>
+                            欢迎，{ userInfo ? userInfo.username : userRegisterInfo.username}
+                        </h3>
                     </div>
+                    <div>
+                        <button type='button' className='text-sm' onClick={logoutHandler}>退出</button>
+                    </div>
+                </div> : <div className="hidden sm:flex flex-row space-x-4">
+                        <Link to="/register">
+                        <button className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-indigo-700 bg-white border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center" >注册</button>
+                        </Link>
+                        
+                        <Link to="/login">
+                        <button className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-white bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-600 hover:bg-indigo-600 duration-150 justify-center items-center" >登录</button>
+                        </Link>
+                    </div> }
+
+                    
+                    
 
                     <div id="bgIcon" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  flex justify-center items-center sm:hidden cursor-pointer">
                         <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg6.svg" alt="burger" />
@@ -42,7 +80,9 @@ const Header = () => {
                     </div>
                     <div className="flex flex-col gap-4 mt-4 w-80 mx-auto ">
                         <button className="rounded-md flex space-x-2 w-full h-10 font-normal text-sm leading-3 text-indigo-700 bg-indigo-600 bg-opacity-0 hover:opacity-100 duration-100 border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center" >登录</button>
+                        <Link to="/register">
                         <button className="rounded-md flex space-x-2 w-full h-10 font-normal text-sm leading-3 text-white bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-600 hover:bg-indigo-600 duration-150 justify-center items-center" >注册</button>
+                        </Link>
                     </div>
                 </div>
             </nav>    

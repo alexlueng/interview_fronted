@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const PopupScreen = ({ questions }) => {
 
-    console.log("POPUP questions: ", questions)
+    // console.log("POPUP questions: ", questions)
     // const questions = ["11", "22", "33"]
     const [selected, setSelected] = useState(0)
     const handleNextQuestionClick = () => {
@@ -17,7 +17,7 @@ const PopupScreen = ({ questions }) => {
     const [isOpen, setIsOpen] = useState(true)
 
     const closePopup = () => {
-        console.log(isOpen)
+        // console.log(isOpen)
         setIsOpen(!isOpen)
     }
 

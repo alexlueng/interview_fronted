@@ -8,10 +8,16 @@ const Question = ( { question } ) => {
                         <div className="bg-gray-100 rounded-sm p-2.5">
                             <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/list5-svg1.svg" alt="apple" />
                         </div>
-                        <div className="pl-3">
+                        <div className="pl-3 flex justify">
                             <div className="flex items-center text-sm leading-none">
                                 <p className="font-semibold text-gray-800">{question.quest}</p>
                                 {/* <p className="text-indigo-700 ml-3">(ID 879-10-940)</p> */}
+                            </div>
+                            <div className='pl-4 flex justify'>
+                                <button type='button' name='hello' className='text-gray-800 bg-blue-400 mx-2 text-sm rounded'>#hello</button>
+                                <button type='button' name='hello' className='text-gray-800 bg-blue-400 mx-2 text-sm rounded'>#hello</button>
+                                <button type='button' name='hello' className='text-gray-800 bg-blue-400 mx-2 text-sm rounded'>#hello</button>
+                                <button type='button' name='hello' className='text-gray-800 bg-blue-400 mx-2 text-sm rounded'>#hello</button>
                             </div>
                             {/* <p className="text-xs md:text-sm leading-none text-gray-600 mt-2">15’5. Core i5. FHD. Integrated graphics</p> */}
                         </div>

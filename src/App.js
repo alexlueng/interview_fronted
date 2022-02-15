@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import AddQuestionScreen from './screens/AddQuestionScreen';
-
 import HomeScreen from './screens/HomeScreen'
+import RegisterScreen from './screens/RegisterScreen'
+import LoginScreen from './screens/LoginScreen';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           
           <Route path='/' component={HomeScreen} exact />
           <Route path='/addQuestion' component={AddQuestionScreen} />
+          <Route path='/register' component={RegisterScreen} />
+          <Route path='/login' component={LoginScreen} />
         </main>
       <Footer />
       </div>

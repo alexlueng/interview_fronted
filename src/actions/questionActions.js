@@ -15,7 +15,7 @@ import {
 
 export const getInterviewList = () => async (dispatch) => {
 
-    console.log("getInterviewList")
+    // console.log("getInterviewList")
 
     try {
         const { data } = await axios.get('http://127.0.0.1:8001/v1/start_interview')
@@ -24,7 +24,7 @@ export const getInterviewList = () => async (dispatch) => {
         // }).catch(error => {
         //     console.log("Error===============>", error)
         // })
-        console.log("getInterviewList data@: ", data.data)
+        // console.log("getInterviewList data@: ", data.data)
         dispatch({
             type: GET_INTERVIEW_LIST,
             interview_questions: data
@@ -95,7 +95,7 @@ export const tagList = () => async (dispatch) => {
     try {
         dispatch({type: TAG_LIST_REQUEST})
         const { data } = await axios.get('http://127.0.0.1:8001/v1/tags')
-        console.log("tag list: ", data.data)
+        // console.log("tag list: ", data.data)
         dispatch({
             type: TAG_LIST_SUCCESS,
             tag_list: data
